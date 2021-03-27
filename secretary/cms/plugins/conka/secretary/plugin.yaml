@@ -1,0 +1,6 @@
+plugin:
+    name: 'Secretary'
+    description: 'AK8PO Secretary'
+    author: 'Filip Conka'
+    icon: oc-icon-rocket
+    homepage: 'https://conka.pro'

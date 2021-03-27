@@ -1,0 +1,7 @@
+1.0.1:
+    - "Base tables"
+    - create_employee_table.php
+    - create_study_groups_table.php
+    - create_subjects_table.php
+    - create_work_labels_table.php
+    - create_study_group_subject_table.php

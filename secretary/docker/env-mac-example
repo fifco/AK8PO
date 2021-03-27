@@ -1,0 +1,68 @@
+# Docker ENV
+## Paths
+
+### Point to the path of your applications code on your host
+APP_CODE_PATH_HOST=./
+
+### Point to where the `APP_CODE_PATH_HOST` should be in the container.
+### You may add flags to the path `:cached`, `:delegated`.
+### When using Docker Sync add nothing (it is configured by separate docker-compose file)
+APP_CODE_PATH_CONTAINER=/var/www:cached
+
+### Choose storage path on your machine. For all storage systems
+DATA_PATH_HOST=.docker/data
+
+## Drivers
+
+### All volumes driver
+VOLUMES_DRIVER=local
+
+### All Networks driver
+NETWORKS_DRIVER=bridge
+
+## Docker compose files
+
+### Select which docker-compose files to include. If using docker-sync append `:docker-compose.sync.yml` at the end
+#COMPOSE_FILE=docker-compose.yml:docker-compose.sync.yml
+COMPOSE_FILE=docker-compose.yml
+
+### Change the separator from : to ; on Windows
+COMPOSE_PATH_SEPARATOR=:
+
+### Define the prefix of container names.
+COMPOSE_PROJECT_NAME=secretary-backend
+
+### Define Docker Sync strategy
+### for osx use 'native_osx', for windows use 'unison'
+DOCKER_SYNC_STRATEGY=native_osx
+
+## Docker Host IP
+
+### Enter your Docker Host IP (will be appended to /etc/hosts). Default is `10.0.75.1`
+DOCKER_HOST_IP=10.0.75.1
+
+## Windows Path
+
+# A fix for Windows users, to ensure the application path works
+COMPOSE_CONVERT_WINDOWS_PATHS=1
+
+## NGINX
+
+NGINX_HOST_HTTP_PORT=80
+
+## MARIADB
+
+MARIADB_DATABASE=backend
+MARIADB_USER=backend
+MARIADB_PASSWORD=secret
+MARIADB_PORT=3306
+MARIADB_ROOT_PASSWORD=root
+MARIADB_ENTRYPOINT_INITDB=./docker/mariadb/docker-entrypoint-initdb.d
+
+## PHP
+
+PHP_IDE_CONFIG=serverName=actlocate-backend
+
+### XDebug
+
+XDEBUG_INI_FILENAME=./xdebug.mac.ini
