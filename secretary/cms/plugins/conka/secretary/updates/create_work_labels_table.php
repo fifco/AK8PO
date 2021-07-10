@@ -1,5 +1,6 @@
 <?php namespace Conka\Secretary\Updates;
 
+use Conka\Secretary\Models\WorkLabelTypeInterface;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 use October\Rain\Support\Facades\Schema;
@@ -11,7 +12,7 @@ class CreateWorkLabelsTable extends Migration
         Schema::create('conka_secretary_work_labels', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->enum('type', ['lecture', 'seminar', 'exercise', 'exam', 'credit', 'graded_credit'])->default('lecture');
+            $table->enum('type', WorkLabelTypeInterface::ALLOWED_VALUES)->default(WorkLabelTypeInterface::LECTURE);
             $table->unsignedInteger('student_count');
             $table->unsignedBigInteger('subject_id')->nullable();
             $table->unsignedBigInteger('study_group_id')->nullable();

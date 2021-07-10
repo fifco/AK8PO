@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Study Group
+
+# Model Form Field configuration
+form: $/conka/secretary/models/studygroup/fields.yaml
+
+# Model Class name
+modelClass: Conka\Secretary\Models\StudyGroup
+
+# Default redirect location
+defaultRedirect: conka/secretary/studygroup
+
+# Create page
+create:
+    title: Create Study Group
+    redirect: conka/secretary/studygroup/update/:id
+    redirectClose: conka/secretary/studygroup
+
+# Update page
+update:
+    title: Edit Study Group
+    redirect: conka/secretary/studygroup
+    redirectClose: conka/secretary/studygroup
+
+# Preview page
+preview:
+    title: Preview Study Group

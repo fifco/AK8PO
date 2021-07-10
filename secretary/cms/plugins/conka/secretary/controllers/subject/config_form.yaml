@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Subject
+
+# Model Form Field configuration
+form: $/conka/secretary/models/subject/fields.yaml
+
+# Model Class name
+modelClass: Conka\Secretary\Models\Subject
+
+# Default redirect location
+defaultRedirect: conka/secretary/subject
+
+# Create page
+create:
+    title: Create Subject
+    redirect: conka/secretary/subject/update/:id
+    redirectClose: conka/secretary/subject
+
+# Update page
+update:
+    title: Edit Subject
+    redirect: conka/secretary/subject
+    redirectClose: conka/secretary/subject
+
+# Preview page
+preview:
+    title: Preview Subject

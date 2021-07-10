@@ -13,4 +13,9 @@ interface LanguageInterface
         self::CS,
         self::EN,
     ];
+
+    public const OPTIONS = [
+        self::CS => 'Czech',
+        self::EN => 'English',
+    ];
 }

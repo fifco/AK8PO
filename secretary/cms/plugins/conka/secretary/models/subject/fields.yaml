@@ -6,3 +6,65 @@ fields:
     id:
         label: ID
         disabled: true
+    abbr:
+        label: Abbreviation
+    title:
+        label: Title
+    department:
+        label: Department
+    garant:
+        label: Garant
+        type: relation
+        nameFrom: fullname
+    credits:
+        label: Credits
+        span: left
+        spanClass: 'col-xs-12 col-sm-2'
+        type: number
+        step: 1
+        min: 0
+    lecture_hours:
+        label: 'Lecture Hours'
+        span: right
+        spanClass: 'col-xs-12 col-sm-2'
+        type: number
+        step: 1
+        min: 0
+    seminar_hours:
+        label: 'Seminar Hours'
+        span: left
+        type: number
+        step: 1
+        min: 0
+    exercise_hours:
+        label: 'Exercise Hours'
+        span: right
+        type: number
+        step: 1
+        min: 0
+    weeks:
+        label: Weeks
+        span: left
+        type: number
+        default: 14
+        step: 1
+        min: 0
+        max: 52
+    group_size:
+        label: 'Group Size'
+        type: number
+        span: right
+        default: 24
+        step: 12
+        min: 0
+    language:
+        label: Language
+        type: dropdown
+        default: cs
+    completation:
+        label: 'Type of completation'
+        type: dropdown
+        default: exam
+
+
+

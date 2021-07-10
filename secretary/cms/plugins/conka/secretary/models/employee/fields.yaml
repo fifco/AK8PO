@@ -2,7 +2,64 @@
 #  Form Field Definitions
 # ===================================
 
-fields:
-    id:
-        label: ID
-        disabled: true
+tabs:
+    stretch: true
+    defaultTab: Info
+    icons:
+        Info: icon-info
+        Labels: icon-tags
+
+    fields:
+        id:
+            label: ID
+            disabled: true
+            tab: Info
+        name:
+            label: Name
+            tab: Info
+        surname:
+            label: Surname
+            tab: Info
+        work_phone:
+            label: 'Work Phone'
+            tab: Info
+        secondary_phone:
+            label: 'Secondary Phone'
+            tab: Info
+        work_email:
+            label: 'Work Email'
+            tab: Info
+        secondary_email:
+            label: 'Secondary Email'
+            tab: Info
+        is_in_phd_study:
+            label: 'Doctoral Degree Student'
+            tab: Info
+            type: switch
+        employment_ratio:
+            label: 'Employment Ratio'
+            tab: Info
+            type: number
+            span: storm
+            cssClass: 'col-xs-12 col-sm-1'
+            commentAbove: '<0,100>'
+            step: 1
+            min: 1
+            max: 100
+
+        assign_work_label:
+            label: Labels
+            tab: Labels
+            type: recordfinder
+            list: ~/plugins/conka/secretary/models/worklabel/columns.yaml
+            recordsPerPage: 10
+            title: Assign a Work Label
+            useRelation: false
+            modelClass: Conka\Secretary\Models\WorkLabel
+            conditions: employee_id is null
+            nameFrom: points
+        assigned_work_labels:
+            label: Assigned Work Labels
+            tab: Labels
+            type: partial
+            path:  ~/plugins/conka/secretary/models/employee/_labels_field.htm

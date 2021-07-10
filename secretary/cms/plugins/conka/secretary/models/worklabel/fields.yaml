@@ -6,3 +6,27 @@ fields:
     id:
         label: ID
         disabled: true
+    type:
+        label: Type
+        type: dropdown
+        default: lecture
+    student_count:
+        label: 'Number of students'
+        type: number
+        span: left
+        default: 10
+    subject:
+        label: Subject
+        type: relation
+        nameFrom: abbr
+        emptyOption: none
+    study_group:
+        label: 'Study Group'
+        type: relation
+        nameFrom: abbr
+        emptyOption: none
+    employee:
+        label: Employee
+        type: relation
+        nameFrom: fullname
+        emptyOption: Unassigned

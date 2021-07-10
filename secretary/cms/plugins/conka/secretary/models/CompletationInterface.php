@@ -15,4 +15,10 @@ interface CompletationInterface
         self::GRADED_CREDIT,
         self::EXAM,
     ];
+
+    public const OPTIONS = [
+        self::CREDIT => 'Credit',
+        self::GRADED_CREDIT => 'Graded Credit',
+        self::EXAM => 'Exam',
+    ];
 }

@@ -1,6 +1,6 @@
 <?php namespace Conka\Secretary;
 
-use Backend;
+use Backend\Facades\Backend;
 use System\Classes\PluginBase;
 
 /**
@@ -16,10 +16,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Secretary',
+            'name' => 'Secretary',
             'description' => 'No description provided yet...',
-            'author'      => 'Conka',
-            'icon'        => 'icon-leaf'
+            'author' => 'Conka',
+            'icon' => 'icon-leaf'
         ];
     }
 
@@ -81,16 +81,31 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
-            'secretary' => [
-                'label'       => 'Secretary',
-                'url'         => Backend::url('conka/secretary/mycontroller'),
-                'icon'        => 'icon-leaf',
-                'permissions' => ['conka.secretary.*'],
-                'order'       => 500,
+            'employee' => [
+                'label' => 'Employee',
+                'url' => Backend::url('conka/secretary/employee'),
+                'icon' => 'icon-user',
+                'order' => 500,
             ],
+            'subject' => [
+                'label' => 'Subject',
+                'url' => Backend::url('conka/secretary/subject'),
+                'icon' => 'icon-archive',
+                'order' => 700,
+            ],
+            'studygroup' => [
+                'label' => 'Study Group',
+                'url' => Backend::url('conka/secretary/studygroup'),
+                'icon' => 'icon-users',
+                'order' => 800,
+            ],
+            'worklabel' => [
+                'label' => 'Work Label',
+                'url' => Backend::url('conka/secretary/worklabel'),
+                'icon' => 'icon-tags',
+                'order' => 900,
+            ]
         ];
     }
 }

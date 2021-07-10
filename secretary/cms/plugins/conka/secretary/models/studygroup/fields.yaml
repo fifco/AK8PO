@@ -6,3 +6,41 @@ fields:
     id:
         label: ID
         disabled: true
+    abbr:
+        label: Abbreviation
+    title:
+        label: Title
+    form:
+        label: 'Study Form'
+        type: dropdown
+        default: 'full-time'
+    term:
+        label: 'Term'
+        type: dropdown
+        default: 'autumn'
+    type:
+        label: 'Study Type'
+        type: dropdown
+        default: 'bachelor'
+    year:
+        label: Year
+        type: number
+        span: left
+        step: 1
+        min: 2020
+        default: 2021
+    students_count:
+        label: 'Number of students'
+        type: number
+        span: right
+        step: 1
+        min: 0
+        default: 36
+    language:
+        label: Language
+        type: dropdown
+        default: cs
+    subjects:
+        label: Subjects
+        type: relation
+        select: concat(abbr, ' - ', title)

@@ -1,0 +1,33 @@
+scopes:
+    unassigned:
+        label: Unassigned
+        type: checkbox
+        default: 1
+        conditions: employee_id is null
+
+    empty:
+        label: Empty (without students)
+        type: checkbox
+        default: 0
+        conditions: student_count = 0
+
+    subject:
+        label: Subject
+        type: group
+        conditions: subject_id in (:filtered)
+        modelClass: Conka\Secretary\Models\Subject
+        nameFrom: abbr
+
+    study_group:
+        label: Study Group
+        type: group
+        conditions: study_group_id in (:filtered)
+        modelClass: Conka\Secretary\Models\StudyGroup
+        nameFrom: abbr
+
+    type:
+        label: Type
+        type: group
+        conditions: type in (:filtered)
+        modelClass: Conka\Secretary\Models\WorkLabel
+        options: getTypeOptions

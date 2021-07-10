@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Work Label
+
+# Model Form Field configuration
+form: $/conka/secretary/models/worklabel/fields.yaml
+
+# Model Class name
+modelClass: Conka\Secretary\Models\WorkLabel
+
+# Default redirect location
+defaultRedirect: conka/secretary/worklabel
+
+# Create page
+create:
+    title: Create Work Label
+    redirect: conka/secretary/worklabel/update/:id
+    redirectClose: conka/secretary/worklabel
+
+# Update page
+update:
+    title: Edit Work Label
+    redirect: conka/secretary/worklabel
+    redirectClose: conka/secretary/worklabel
+
+# Preview page
+preview:
+    title: Preview Work Label

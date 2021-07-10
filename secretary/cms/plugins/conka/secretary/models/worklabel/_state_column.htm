@@ -1,0 +1,18 @@
+<?php
+
+use Conka\Secretary\Models\WorkLabel;
+
+/** @var WorkLabel $record */
+if ($record->employee_id !== null && $record->student_count === 0) {
+    $icon = "exclamation-triangle";
+    $class = "text-danger";
+} elseif ($record->employee_id === null) {
+    $icon = "user-times";
+    $class = "text-warning";
+} else {
+    $icon = "circle";
+    $class = "text-success";
+}
+
+?>
+<i class="icon-<?= $icon ?> <?= $class ?>"></i>

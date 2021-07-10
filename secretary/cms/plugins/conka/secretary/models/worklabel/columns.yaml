@@ -4,5 +4,32 @@
 
 columns:
     id:
-        label: ID
-        searchable: true
+        label: Id
+    state:
+        label: State
+        type: partial
+        path: ~/plugins/conka/secretary/models/worklabel/_state_column.htm
+        valueFrom: id
+        sortable: false
+        searchable: false
+    subject_abbr:
+        label: Subject
+        relation: subject
+        select: concat(abbr, ' (', language , ')')
+    study_group_abbr:
+        label: 'Study Group'
+        relation: study_group
+        select: abbr
+    type:
+        label: Type
+        type: partial
+        path: ~/plugins/conka/secretary/models/worklabel/_type_column.htm
+    student_count:
+        label: Student Count
+        type: partial
+        path: ~/plugins/conka/secretary/models/worklabel/_student_count_column.htm
+    points:
+        label: Points
+        type: number
+
+

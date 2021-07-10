@@ -6,3 +6,14 @@ columns:
     id:
         label: ID
         searchable: true
+    fullname:
+        label: 'Fullname'
+        searchable: true
+    work_points:
+        label: Points
+        sortable: true
+        searchable: true
+        type: partial
+        path: ~/plugins/conka/secretary/models/employee/_points_column.htm
+
+

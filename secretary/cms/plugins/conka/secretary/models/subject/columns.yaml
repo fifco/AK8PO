@@ -6,3 +6,9 @@ columns:
     id:
         label: ID
         searchable: true
+    abbr:
+        label: Abbreviation
+        searchable: true
+    title:
+        label: Title
+        searchable: true

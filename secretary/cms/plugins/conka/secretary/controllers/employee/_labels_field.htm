@@ -1,0 +1,53 @@
+<div id="assignedWorkLabels">
+    <div class="control-list">
+        <table class="table data" data-control="rowlink">
+            <thead>
+            <tr>
+                <th class=""><a href="/">Subject</a></th>
+                <th class=""><a href="/">Study Group</a></th>
+                <th class=""><a href="/">Student Count</a></th>
+                <th class=""><a href="/">Points</a></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($model->work_labels as $workLabel) { ?>
+            <tr>
+                <td>
+                    <?= $workLabel->subject->abbr ?>
+                </td>
+                <td><?= $workLabel->study_group->abbr ?></td>
+                <td>
+                    <?= $workLabel->student_count ?>
+                    <?php
+                    if ($workLabel->student_count === 0) {
+                        echo '<i class="icon-exclamation-triangle text-danger"></i>';
+                    }
+                    ?>
+                </td>
+                <td><?= $workLabel->points ?></td>
+                <td class="column-button nolink text-right">
+                    <button
+                        data-request="onUnassignWorkLabel"
+                        data-request-data="id:<?= $workLabel->id ?>"
+                        data-request-update="labels_field: '#assignedWorkLabels'"
+                        class="btn btn-danger oc-icon-trash">
+                        Unassign
+                    </button>
+                </td>
+            </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+    </div>
+    <div
+        class="control-chart centered wrap-legend"
+        data-control="chart-pie"
+        data-size="200"
+        data-center-text="<?= round($model->work_points) ?>/<?= $model->maximum_work_points ?>">
+        <ul>
+            <li>Assigned <span><?= round($model->work_points) ?></span></li>
+            <li>Unassigned <span><?= $model->maximum_work_points - round($model->work_points) ?></span></li>
+        </ul>
+    </div>
+</div>
